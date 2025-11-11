@@ -9,3 +9,10 @@ jobs:
         if [[ deprecated ]]; then
           echo "::warning::This command deprecated fond."
         fi 
+  commands-job2:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set API key
+      run: echo "API_KEY=12345" >> $GITHUB_ENV
+    - name: Use api key
+      run: echo "Using API key $API_KEY"
